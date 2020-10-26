@@ -1,0 +1,17 @@
+<h2>Create a Post</h2>
+Title: <input #title type="text" />
+Content: <input #content type="textarea">
+<button (click)="createPost(title.value, content.value)">Submit</button>
+<br>
+<h1>Posts</h1>
+<ul>
+  <hr>
+  <li *ngFor="let post of posts | async">
+    title: {{ post.title }}
+    <br>
+    content: {{ post.content }}
+    <br>
+    <button (click)="delete(post._id)">Delete</button>
+    <hr>
+  </li>
+</ul>
